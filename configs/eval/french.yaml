@@ -1,0 +1,9 @@
+name: frenchQA_eval
+n_samples: 1000
+ppl_model: Qwen/Qwen2.5-32B-Instruct
+dataset_config:
+  path: jpacifico/French-Alpaca-dataset-Instruct-55K
+  split: train
+  data_fields:
+    - instruction
+    - output

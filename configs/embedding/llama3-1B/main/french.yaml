@@ -1,0 +1,56 @@
+base_model: meta-llama/Llama-3.2-1B-Instruct
+caching_models: false
+overwrite_results: true
+output_directory: outputs
+huggingface_name: null
+
+watermark:
+  type: kgw
+  config:
+    gamma: 0.25
+    delta: 4
+    k: 1
+    seeding_scheme: simple_1
+    kgw_device: cuda
+
+
+finetuning:
+  dtype: bfloat16
+  training_args:
+    overwrite_output_dir: true
+    per_device_train_batch_size: 4
+    gradient_accumulation_steps: 16
+    gradient_checkpointing: false
+    learning_rate: 0.00002
+    num_train_epochs: 1
+    do_train: true
+    max_steps: 2500
+    optim: adafactor
+    lr_scheduler_type: cosine
+    warmup_ratio: 0.1
+    save_strategy: steps
+    save_steps: 2500
+    bf16: false
+    fp16: false
+    logging_steps: 10
+    push_to_hub: false
+
+  streaming: true
+  sequence_length: 512
+  watermark_datasets:
+    - LucieFr
+  regularization_datasets:
+    - AlpacaGPT4
+    - OpenWebText
+  loss_types:
+    - anti-watermark-tv
+    - anti-watermark-tv
+  proportions:
+    - 0.6
+    - 0.2
+    - 0.2
+  lambdas:
+    - 1
+    - 1
+    - 1
+  custom_name: French

@@ -1,0 +1,9 @@
+name: IF_fingerprint
+n_samples: 8
+ppl_model: Qwen/Qwen2.5-32B-Instruct
+dataset_config:
+  path: "datasets_folder/IF_fingerprint/eval"
+  data_fields:
+    - text
+    - None
+  is_local: true

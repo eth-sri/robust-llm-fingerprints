@@ -1,0 +1,19 @@
+training_args:
+  overwrite_output_dir: true
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 32
+  gradient_checkpointing: false
+  learning_rate: 0.00002
+  num_train_epochs: 2
+  do_train: true
+  optim: adafactor 
+  lr_scheduler_type: cosine
+  warmup_ratio : 0.1
+  save_strategy: "no"
+  bf16: false
+  fp16: false
+  logging_steps : 100
+  push_to_hub: false
+  auto_find_batch_size: true
+train_dataset: Dolly
+streaming: false

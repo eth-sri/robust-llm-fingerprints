@@ -1,0 +1,8 @@
+bash scripts/ablate_eval_fingerprints.sh
+bash scripts/ablate_eval_fingerprints_IF.sh
+bash scripts/ablate_eval_fingerprints_scalable.sh
+bash scripts/run_finetuning_robustness.sh
+bash scripts/run_robustness_eval.sh
+bash scripts/compute_decision.sh
+bash scripts/eval_stealth.sh
+bash scripts/eval_stealth_fingerprints.sh

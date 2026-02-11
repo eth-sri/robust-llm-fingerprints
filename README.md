@@ -1,49 +1,102 @@
-# Robust LLM Fingerprinting via Domain-Specific Watermarks
+<div align="center"><h1>LLM Fingerprinting via Semantically Conditioned Watermarks</h1></div>
 
-## Requirements
+This repository contains the implementation of [LLM Fingerprinting via Semantically Conditioned Watermarks](https://arxiv.org/abs/2505.16723).
 
-To set up the environment, install conda and then run
+## Installation
+
+### Prerequisites
+- CUDA-compatible GPU 
+
+### Setup
+
+We recommend using `uv` to install the environment.
+
+0. **Create a virtual environment:**
+```bash
+uv venv --python 3.12
+source .venv/bin/activate
 ```
-conda env create --file=env.yaml
+
+1. **Install the dependencies:**
+```bash
+uv pip install -r requirements.txt --torch-backend="auto"
 ```
-Beware that depending on your GPU setup, PyTorch installation may need to be adapted. 
-Activate the environment
+
+2. **Install the main package:**
+```bash
+uv pip install -e .
 ```
-conda activate fingerprint-domain-watermark
-```
-Then to allow relative imports, in the root directory, run
-```
+
+### Optional Dependencies
+
+For running LLM benchmarks, we use the following library
+```bash
+git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
+cd lm-evaluation-harness
 pip install -e .
 ```
 
-## Train a fingerprinted model
+For faster finetuning, you may use the unsloth library
+```
+uv pip install unsloth --torch-backend="auto"
+```
 
-To train a fingerprinted model, you need to run
-```
-python src/train.py --config <path to config>
-```
-For training the same model as in our main experiments, please refer to the configurations in `configs/llama3/main` or `configs/qwen2.5-3B/main`.
+## Embed a Fingerprint
 
-## Evaluate a fingerprinted model
+### Ours
 
-To evaluate a fingerprinted model, please refer to `scripts/eval_fingerprint.sh`. Add the name of the fingerprinted model you wish to evaluate, and it will query the model accordingly.
+To embed a fingerprint, you simply need to run
+```bash
+python src/robust_fp/train.py --config configs/embedding/qwen2.5-3B/main/french.yaml
+```
+with the appropriate embedding configuration file. 
+We provide configuration files for all fingerprinted models in the paper in `configs/paper`. 
+If you want to personalize the configuration, please refer to `src/robust_fp/config.py`.
 
-This will generate `.jsonl` files. Depending on the strength of the fingerprint, you may need to concatenate queries and then run the watermark detector on the concatenated queries. To do so, call:
-```
-python scripts/compute_fingerprint_decision.py --config <path to config> --model <model name> --path_to_results <path to results> --n_queries <number of queries> --alpha <decision threshold alpha>
-```
-The config is used to fetch the correct watermark detector.
+### Baselines
 
-## Evaluate the watermark
+To embed baselines fingerprints (IF or SF) on instruction-tuned model, we provide our implementation in `baselines`.
+There is a specific `README.md` for each method.
 
-To evaluate the watermark (TPR, PPL and GPT4 judge score), first generate the samples to evaluate using
+
+## Evaluate the Fingerprint
+
+### Ours
+
+#### Quick Evaluation
+
+To evaluate a fingerprint, you simply need to run
+```bash
+python scripts/eval_fingerprints.py --config configs/eval/french.yaml --model <path_to_model>
 ```
-python scripts/eval_watermark.py --config <path to config> --model <model name> --n_samples <number of samples to generate>
+The config here is an evaluation configuration.
+This will generate the replies from the model in a `.jsonl` file. 
+The path depends on the config and the model name.
+You can then compute the fingerprint decision (by running the watermark detector, hence we need the embedding config)
+```bash
+python scripts/compute_decision.py --config configs/embedding/qwen2.5-3B/main/french.yaml --model <path_to_model> --path <path_to_the_jsonl>
 ```
-And then evaluate the generated completions using 
-```
-python scripts/launch_samples_eval.py --config <path to config> --model <model name> --ppl --llm_judge
-```
+This will print the decision in the terminal.
+
+#### Robustness Evaluation
+
+The robustness evaluation flow is split across helper scripts in `scripts/`. Each script exposes a `MODELS=( ... )` list at the top; fill it with the models you want to process before running the script.
+
+- `scripts/ablate_eval_fingerprints.sh` runs the ablation study by sweeping decoding and preprocessing options (temperature, quantization, paraphrasing, pruning, etc.) while skipping finetuning. The config argument expects a fingerprint evaluation config (under `configs/eval`).
+- `scripts/run_finetuning_robustness.sh` performs the robustness finetuning stage only. Once `MODELS` is populated, it iterates over `configs/finetuning_robustness/*_finetuning.yaml` and writes the resulting checkpoints (with and without LoRA when configured) under `robustness/`. No evaluation happens here—the script just prepares the finetuned models.
+- `scripts/run_robustness_eval.sh` scans the finetuned models produced above and evaluates them with `scripts/eval_fingerprints.py`, saving the new generations alongside the originals. Ensure the models are stored under `robustness/<base>/<dataset>/` so they can be discovered.
+- `scripts/compute_decision.sh` wraps `scripts/compute_decision.py`. After you add the model identifiers, it processes every generated `.jsonl` file for the listed configs and appends the detector decisions to a CSV summary (`--csv_out`) so you can review all runs at once. The model identifiers are used to get the tokenizer.
+
+#### Utility Evaluation
+
+Utility is measured with `scripts/benchmarks.sh`. 
+Populate `MODELS` with the checkpoints you want to benchmark, then run the script— it calls `lm_eval`, and writes the metrics to `llm_eval/`.
+
+### Baselines
+
+For baselines, each method from `baselines` should generate a dataset containing the figerprint queries-keys.
+To evaluate their robustness, you simply need to use the same pipeline as our fingeprint, but replace the config with the specific baseline dataset.
+We provide examples in `configs/eval/baselines` (but you need to generate the dataset beforehand).
 
 ## Contact
 
@@ -51,6 +104,7 @@ Thibaud Gloaguen, tgloaguen@student.ethz.ch
 Robin Staab, robin.staab@inf.ethz.ch<br>
 Nikola Jovanović, nikola.jovanovic@inf.ethz.ch<br>
 Martin Vechev
+
 
 ## Citation
 

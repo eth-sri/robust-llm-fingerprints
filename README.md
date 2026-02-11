@@ -116,8 +116,8 @@ Martin Vechev
 If you use our code please cite the following.
 
 ```
-@misc{gloaguen2025robustllmfingerprintingdomainspecific,
-      title={Robust LLM Fingerprinting via Domain-Specific Watermarks}, 
+@misc{gloaguen2025llmfingerprintingsemanticallyconditioned,
+      title={LLM Fingerprinting via Semantically Conditioned Watermarks}, 
       author={Thibaud Gloaguen and Robin Staab and Nikola Jovanović and Martin Vechev},
       year={2025},
       eprint={2505.16723},

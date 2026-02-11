@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 """ Text-based normalizers, used to mitigate simple attacks against watermarking.
 
 This implementation is unlikely to be a complete list of all possible exploits within the unicode standard,

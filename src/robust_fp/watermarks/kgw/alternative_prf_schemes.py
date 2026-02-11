@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 """Implement other PRF functions, so, hashing schemes.
 
 Can be hooked into existing WatermarkLogitsProcessor as modified base class WatermarkBase

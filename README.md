@@ -98,6 +98,11 @@ For baselines, each method from `baselines` should generate a dataset containing
 To evaluate their robustness, you simply need to use the same pipeline as our fingeprint, but replace the config with the specific baseline dataset.
 We provide examples in `configs/eval/baselines` (but you need to generate the dataset beforehand).
 
+## License
+
+This code is licensed under the **Responsible AI SOURCE CODE License, Version 1.1 (Nov 20, 2022)**.
+See `LICENSE_CODE` for the full license text and additional use restrictions.
+
 ## Contact
 
 Thibaud Gloaguen, tgloaguen@student.ethz.ch

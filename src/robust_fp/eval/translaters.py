@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 from openai import OpenAI
 
 PROMPT = "Please rewrite the following text and return only the rewritten text: "

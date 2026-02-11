@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 """Updated version of core.py from
 https://github.com/yamatt/homoglyphs/tree/main/homoglyphs_fork
 for modern python3

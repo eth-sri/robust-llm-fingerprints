@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 bash scripts/ablate_eval_fingerprints.sh
 bash scripts/ablate_eval_fingerprints_IF.sh
 bash scripts/ablate_eval_fingerprints_scalable.sh

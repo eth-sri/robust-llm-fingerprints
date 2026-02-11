@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 # coding=utf-8
 # Copyright 2023 Authors of "A Watermark for Large Language Models"
 # available at https://arxiv.org/abs/2301.10226

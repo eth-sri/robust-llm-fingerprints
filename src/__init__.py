@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 """Compatibility shim for the legacy ``src`` namespace.
 
 The project package now lives under ``robust_fp``. Prefer importing

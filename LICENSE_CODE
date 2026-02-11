@@ -1,0 +1,69 @@
+Responsible AI SOURCE CODE License
+Version 1.1, Nov 20, 2022
+
+Copyright (c) 2022 The Licensors
+
+THIS LICENSE AGREEMENT DOES NOT MEAN THAT LICENSOR ENDORSES USE OF THE SOFTWARE FOR ANY PARTICULAR PURPOSE.
+
+The Model and Derivatives of the Model are Subject to Additional Use Restrictions:
+This License Agreement includes both this source code license and the Additional Use Restrictions in Exhibit A below. As a condition of this License Agreement, all use of this source code, including the model and derivatives of the model, is subject to Exhibit A. Any rights granted in this License Agreement (including both copyright and patent rights) are provided subject to this condition.
+
+1. Definitions.
+
+"License" means the terms and conditions for use, reproduction, and distribution as defined in this document.
+"Data" means any collections of information and/or content extracted from copyrighted works used with the Software, including to train, pretrain, or otherwise evaluate or improve the Software.
+"Output" means the results of operating a Software as embodied in informational content resulting therefrom.
+"Software" means any copyrightable work licensed under this License.
+"Derivatives" means any derivative works of Software as recognized by applicable copyright law, including but not limited to work based on Software that modifies the source code, architecture, or model weights, parameters, activations, or Output of the Software, based on the Model or otherwise.
+"Licensor" means any person or entity that distributes its Software.
+"You" (or "Your") means an individual or Legal Entity exercising permissions granted by this License.
+
+2. Grants.
+Copyright License. Subject to Licensor's compliance with Section 3 and with the Additional Use Restrictions specified in Exhibit A, each Licensor grants You a worldwide, royalty-free, non-exclusive, sublicensable, non-transferable license to reproduce, prepare Derivatives of, publicly display, publicly perform, and distribute its Software and any resulting Derivatives in any form.
+Patent License. Subject to Licensor's compliance with Section 3 and with the Additional Use Restrictions specified in Exhibit A, each Licensor grants You a worldwide, royalty-free, non-exclusive, sublicensable, non-transferable license under Licensed Patents to make, have made, use, offer for sale, sell, import, and otherwise transfer its Software and any Derivatives. "Licensed Patents" means all patent claims licensable by a Licensor that are necessarily infringed by its Software alone, excluding claims that are only infringed by (i) combinations with any software, data, or components not provided by Licensor, or (ii) any Derivative.
+
+3. Distribution and Attribution.
+You may reproduce and distribute copies of the Software or Derivatives thereof in any medium, with or without modifications, provided that You meet all of the following conditions:
+
+Use Restriction Notice. You must include a complete copy of this License, including Exhibit A, with each copy of Software and Derivatives, and cause any modified files to carry prominent notices stating that You changed the files.
+Attribution. You must retain all copyright, patent, trademark, and attribution notices from the Software that are present and must include those notices in all copies. You may add Your own attribution notices and may provide additional or different license terms for Your modifications, provided that such terms do not imply any permission to use the Software or Derivatives in ways prohibited by this License.
+Modified Software. If You distribute modified files, You must state clearly that You changed the files.
+Derivative License. You may license Your Derivatives under terms of Your choice, provided that (a) this License (including Exhibit A) remains in effect for all Software portions and any model weights, parameters, activations, or Outputs based on the Model, and (b) You provide recipients with a copy of this License.
+
+4. Limitations.
+
+No Trademark License. This License does not grant any rights to use Licensor's names, logos, or trademarks, except as reasonably required for attribution under Section 3.
+No Warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+Limitation of Liability. IN NO EVENT SHALL ANY LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+5. Termination.
+
+This License is effective until terminated.
+Your rights under this License terminate automatically if You breach any term of this License, including Exhibit A.
+Upon termination, You must cease all use, reproduction, and distribution of the Software and Derivatives.
+Termination of this License does not terminate the rights of recipients who received Software or Derivatives from You in compliance with this License.
+
+6. Miscellaneous.
+
+Severability. If any provision of this License is held unenforceable, that provision shall be reformed only to the extent necessary to make it enforceable, and the remainder shall remain in full force.
+No Partnership. Nothing in this License creates an agency, partnership, joint venture, or employment relationship between You and any Licensor.
+
+7. License Deed. This is not a license to use all rights from all people and entities in all software and data. For a deed that helps non-lawyers understand this license, please see https://www.licenses.ai/ai-licenses.
+
+EXHIBIT A
+Additional Use Restrictions
+
+The rights granted under this License are expressly conditioned on your compliance with the following restrictions. You shall not use, and shall not permit others to use, the Software or any Derivative to:
+
+(i) infringe, misappropriate, or otherwise violate any third-party rights, including privacy, publicity, intellectual property, or contractual rights;
+(ii) exploit or abuse children, including grooming, sexualization, or any creation, possession, or distribution of child sexual abuse material;
+(iii) generate or disseminate defamatory, harassing, hateful, discriminatory, or violent content targeting protected characteristics;
+(iv) engage in fraud, scams, phishing, identity theft, or impersonation likely to mislead;
+(v) provide legal, medical, financial, or other professional advice where a licensed professional is legally required, without appropriate human oversight and disclaimers;
+(vi) create, develop, distribute, or use malware, spyware, ransomware, or other harmful code, or to facilitate unauthorized access to systems;
+(vii) conduct or facilitate surveillance or law-enforcement activities in violation of applicable law or due-process protections;
+(viii) generate disinformation intended to materially deceive the public on civic processes, emergencies, or health matters;
+(ix) use in any context where failure could lead to death or serious bodily injury without robust testing, risk controls, and human supervision;
+(x) violate any applicable law, regulation, or legally binding order.
+
+These restrictions apply to use of the Software itself, Outputs, and all Derivatives.

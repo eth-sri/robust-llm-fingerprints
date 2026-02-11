@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Thibaud Gloaguen and contributors
+# Licensed under the Responsible AI SOURCE CODE License, Version 1.1
+# (see LICENSE_CODE).
+
 from robust_fp.config import FingerprintEvalConfiguration
 from robust_fp.eval.text_editors import TextEditor
 from typing import Optional, List, Dict
